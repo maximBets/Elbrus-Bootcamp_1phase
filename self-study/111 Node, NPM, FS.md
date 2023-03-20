@@ -7,11 +7,13 @@
 
 ## Обновление Node.js
 
-Для того чтобы проверить версию ноды, вводим:
+Для того чтобы проверить версию Node.js, введи:
 
 ```bash
 node -v
 ```
+
+Проверь, чтобы версия Node.js была не ниже актуальной LTS версии. LTS версию можно посмотреть на главном сайте Node.js: https://nodejs.org/ru.
 
 Чтобы обновить Node.js лучше всего воспользуйся инструментом `nvm`. Здесь написано как он устанавливается: https://github.com/nvm-sh/nvm#install--update-script (Для Linux и Mac), https://github.com/coreybutler/nvm-windows (Для Windows).
 
