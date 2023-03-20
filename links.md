@@ -1,5 +1,4 @@
 - [Первая фаза - практика](https://github.com/Elbrus-Bootcamp/phase-1/)
-- [Плейлист с лекциями]()
-- [Плейлист с ответами на вопросы]()
+- [Плейлист с лекциями](https://www.youtube.com/playlist?list=PLvCaAwzmrwpMrEk3Zcrslx1yp2rx_CbaA)
 - [Шпаргалка по гиту](https://gist.github.com/mrThomasTeller/5ba8c54c899983bc5c516868fac8dd84)
 - [Ответы на часто задаваемые вопросы](https://github.com/Elbrus-Bootcamp/faq-for-students)
