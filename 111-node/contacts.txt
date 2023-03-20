@@ -1,0 +1,12 @@
+Вася phone +73456372837
+Гриша email grisha@mail.ru
+Маша phone 88001004050
+Маша website https://masha.com
+Василиса phone +7 334 23423434
+Василиса phone +7 334 234 23 43
+Василиса phone +7 334 234 23 43
+Василиса phone +1 83342342343
+Галина phone +1 83342342343
+Галина phone +7 334 234 23 43
+Галина phone +7 334 234 23 43
+Антон email anton@gmail.com
