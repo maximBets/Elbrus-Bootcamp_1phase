@@ -1,0 +1,27 @@
+{
+  "name": "checkpoint-fs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest spec/*[sS]pec.js -i"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elbrus-Bootcamp/checkpoint-fs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elbrus-Bootcamp/checkpoint-fs/issues"
+  },
+  "homepage": "https://github.com/Elbrus-Bootcamp/checkpoint-fs#readme",
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "jest": "^28.1.1"
+  }
+}
