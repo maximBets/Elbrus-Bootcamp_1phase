@@ -1,0 +1,87 @@
+# 112 Arrays, Array Methods. Материалы для самостоятельной подготовки
+
+## Методы массивов
+
+Документацию по методам массивов можно найти, например, по этой ссылке: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array. Рекомендуем тебе начинать знакомиться с каждым из методов по примерам использования.
+
+## Мутирующие и немутирующие методы массивов
+
+Методы массивов можно разделить на две категории: мутирующие и немутирующие.
+
+Мутирующие методы изменяют исходный массив, например, методы `push`, `pop`, `shift`, `unshift`, `splice`, `reverse`, `sort`. Например:
+
+```javascript
+const fruits = ['apple', 'orange', 'banana'];
+const sortedFruits = fruits.sort();
+console.log(sortedFruits); // выведет ['apple', 'banana', 'orange']
+console.log(fruits); // ТОЖЕ ВЫВЕДЕТ ['apple', 'banana', 'orange']. Потому что метод sort мутировал (изменил) исходный массив fruits.
+```
+
+Немутирующие методы не изменяют исходный массив, а возвращают новый массив или другую информацию, например, методы `slice`, `concat`, `filter`, `map`, `reduce`, `every`, `some`. Например:
+
+```javascript
+const fruits = ['apple', 'orange', 'banana'];
+const upperCasedFruits = fruits.map((f) => f.toUpperString());
+console.log(upperCasedFruits); // выведет ['APPLE', 'ORANGE', 'BANANA']
+console.log(fruits); // а это выведет исходный массив ['apple', 'orange', 'banana']. Метод map - немутирующий и потому не изменяет исходный массив fruits.
+```
+
+При использовании мутирующих методов следует быть осторожным, так как они могут привести к неожиданным результатам, особенно если массив используется в нескольких местах в программе.
+
+## Копирование
+
+Бывает так, что мы хотим применить мутирующий метод к массиву. Но при этом мы не хотим менять исходный массив. В этом случае нам поможет копирование массива. Копирование массива можно сделать с помощью методов `slice` или `concat`. Но самый современный способ - применить spread-оператор, вот так:
+
+```javascript
+const fruits = ['apple', 'orange', 'banana'];
+const fruitsCopy = [...fruits];
+const sortedFruits = fruitsCopy.sort();
+console.log(sortedFruits); // выведет ['apple', 'banana', 'orange']
+console.log(fruits); // выведет исходный массив ['apple', 'orange', 'banana']. Он не изменился потому что мы мутировали его копию, а не исходный массив.
+```
+
+Обрати внимание, так массив не скопируется:
+
+```javascript
+const fruits = ['apple', 'orange', 'banana'];
+const fruitsCopy = fruits;
+```
+
+Если мы сделаем такое присваивание `const fruitsCopy = fruits;`, то обе переменные будут ссылаться на один и тот же массив в памяти, поэтому любые изменения, произведенные в `fruitsCopy` отразятся на `fruits`, и наоборот.
+
+## Глубокое копирование
+
+Копирование, которое мы рассмотрели выше называется "поверхностное копирование" потому что оно копирует только массив, но не объекты внутри него. Посмотри на такой пример кода:
+
+```javascript
+const originalArray = [
+  { name: 'John', age: 30 },
+  { name: 'Jane', age: 25 },
+];
+
+// поверхностное копирование массива
+const copiedArray = [...originalArray];
+
+// Меняем John на Mark в скопированном массиве
+copiedArray[0].name = 'Mark';
+
+console.log(copiedArray); // выведет [{name: 'Mark', age: 30}, {name: 'Jane', age: 25}]
+
+console.log(originalArray); // Но и тут John также поменялся на Mark [{name: 'Mark', age: 30}, {name: 'Jane', age: 25}]
+```
+
+Это происходит из-за того, что при поверхностном копировании массива объекты внутри него не копируются, а только передаются по ссылке. Поэтому, если мы изменяем какой-то свойство объекта в скопированном массиве, то это изменение будет отражено и в исходном массиве, так как они ссылаются на один и тот же объект в памяти. Для того чтобы скопировать массив полностью (включая все объекты внутри него) нужно выполнить "глубокое копирование".
+
+```javascript
+// глубокое копирование массива
+const deepCopiedArray = JSON.parse(JSON.stringify(originalArray));
+
+// Меняем John на Mark в скопированном массиве
+deepCopiedArray[0].name = 'Mark';
+
+console.log(deepCopiedArray); // выведет [{name: 'Mark', age: 30}, {name: 'Jane', age: 20}]
+
+console.log(originalArray); // объект в оригинальном массиве не поменялся выведет [{name: 'John', age: 30}, {name: 'Jane', age: 20}]
+```
+
+`JSON.stringify` - превращает JavaScript объект (или массив) в JSON-строку. `JSON.parse` - превращает строку обратно уже в новый объект.
