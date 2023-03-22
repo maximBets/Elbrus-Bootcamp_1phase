@@ -16,9 +16,9 @@ function getPadawanNames() {
   //   if (name.trim() !== '') namesFiltered.push(name);
   // }
 
-  const namesFiltered = names.filter((name) => name !== '');
+  // const namesFiltered = names.filter((name) => name !== '');
 
-  return namesFiltered;
+  return names;
 }
 
 function getLightsaberScores() {
@@ -62,3 +62,5 @@ module.exports = {
   getStats,
   writeStats,
 };
+
+console.log(getStats());
