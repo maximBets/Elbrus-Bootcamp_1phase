@@ -1,0 +1,29 @@
+Лекция:
+  + Что такое объект?
+  +   создание
+  +   обращение к полям
+  +   for, Object.keys, Object.values, Object.entries
+  -   in, hasOwnProperty (это в прототипы)
+  +   delete
+  -   new Set, new Map
+  + ООП - что это такое?
+  +   есть поля и методы
+  + this
+  +   пример - общая функция для двух объектов
+  +   убираем функции из объектов и явно передаём контекст (apply, call)
+  -   bind
+  -   () => - не имеет контекста
+  + Прототипы
+  +   Решаем проблему с автомобилями: Object.create
+  +   Замена свойств
+  +   Функция-конструктор
+  +   Object.getPrototypeOf
+  +   Наследование: Parent.call(this), Object.setPrototypeOf(Derived.prototype, Parent.prototype)
+  -   instanceof
+  - Прототипы стандартных типов
+  - Object.assign
+  - Посоветовать пересматривать слайды
+
+Дополнительно:
+  - параметры по умолчанию
+  - параметр-объект
