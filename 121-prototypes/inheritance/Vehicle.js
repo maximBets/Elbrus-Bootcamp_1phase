@@ -4,6 +4,8 @@ function Vehicle(model, maxSpeed) {
   this.maxSpeed = maxSpeed;
 }
 
+
+
 Vehicle.prototype.drive = function (km) {
   console.log(`Проехали ${km} км`);
 };
