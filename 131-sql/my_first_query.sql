@@ -25,12 +25,6 @@ INSERT INTO groups_elbrus (name) VALUES
     ('bears');
 
 
---вставляем туда значения
-INSERT INTO groups (name) VALUES 
-    'leopards',
-    'beavers',
-    'bears';
-
 --выбрать все поля из таблицы
 SELECT * FROM groups_elbrus;
 
